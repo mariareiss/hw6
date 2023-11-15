@@ -20,14 +20,18 @@
           <a class="nav-link active" aria-current="page" href="#"/>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="chart.php">Chart</a>
+          <a class="nav-link" href="chart.php">Java Library 1</a>
         </li>
                 <li class="nav-item">
-          <a class="nav-link" href="pie.php">Pie Chart</a>
+          <a class="nav-link" href="pie.php">Java Library 2</a>
         </li>
                 </li>
                 <li class="nav-item">
-          <a class="nav-link" href="demo.php">demo</a>
+          <a class="nav-link" href="demo.php">Java Library 3</a>
+        </li>
+                        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="X.php">Java Library 4</a>
         </li>
       </ul>
     </div>
