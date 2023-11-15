@@ -20,36 +20,59 @@
   <canvas id="Pie chart colors" width="400" height="200"></canvas>
 
 <script>
-const data = {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-};
-// </block:setup>
+  const electricVehicles = [
+            {
+                "model": "Tesla Model S",
+                "manufacturer": "Tesla",
+                "year": 2021,
+                "charging_time": 4.5
+            },
+            {
+                "model": "Nissan Leaf",
+                "manufacturer": "Nissan",
+                "year": 2020,
+                "charging_time": 6
+            },
+            {
+                "model": "Chevrolet Bolt EV",
+                "manufacturer": "Chevrolet",
+                "year": 2022,
+                "charging_time": 5.5
+            },
+            // Add more vehicle data as needed
+        ];
 
-// <block:config:0>
-const config = {
-  type: 'doughnut',
-  data: data,
-};
-// </block:config>
-
-module.exports = {
-  actions: [],
-  config: config,
-};
+     const ctx = document.getElementById('chargingTimesChart').getContext('2d');
+        const chargingTimesChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: electricVehicles.map(vehicle => vehicle.model),
+                datasets: [{
+                    label: 'Charging Time (hours)',
+                    data: electricVehicles.map(vehicle => vehicle.charging_time),
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        // Add more colors if you have more vehicles
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        // Add more colors if you have more vehicles
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
 </script>
 </body>
 </html>
