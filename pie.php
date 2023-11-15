@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <title>JavaScript Libraries Demo</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include Axios library -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include Lodash library -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Pie Chart Colors</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Pie Chart Colors</h1>
+  <canvas id="Pie chart colors" width="400" height="200"></canvas>
+
+<script>
 const data = {
   labels: [
     'Red',
@@ -28,3 +50,6 @@ module.exports = {
   actions: [],
   config: config,
 };
+</script>
+</body>
+</html>
