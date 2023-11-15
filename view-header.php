@@ -22,6 +22,9 @@
         <li class="nav-item">
           <a class="nav-link" href="chart.php">Chart</a>
         </li>
+                <li class="nav-item">
+          <a class="nav-link" href="pie.php">Pie Chart</a>
+        </li>
       </ul>
     </div>
   </div>
