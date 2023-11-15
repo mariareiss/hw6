@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>JavaScript Libraries</title>
-</head>
-<body>
-    <h1>JavaScript Libraries</h1>
+// Initialize Chart.js
 const ctx = document.getElementById('chartContainer').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
@@ -51,10 +45,9 @@ axios.get('https://jsonplaceholder.typicode.com/posts/1')
     .catch(error => {
         console.error('Error fetching data:', error);
     });
-    </body>
-</html>
 
 // Use Lodash for additional utility functions
 const numbers = [1, 2, 3, 4, 5];
 const sum = _.sum(numbers);
 console.log('Sum of numbers:', sum);
+
