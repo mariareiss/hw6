@@ -33,19 +33,22 @@
             // Add more vehicle data as needed
         ];
 
+        const labels = electricVehicles.map(vehicle => vehicle.model);
+        const series = electricVehicles.map(vehicle => vehicle.charging_time);
+
         const chartOptions = {
             chart: {
                 type: 'line',
                 height: 300,
             },
-            series: electricVehicles.map(vehicle => vehicle.charging_time),
-            labels: electricVehicles.map(vehicle => vehicle.model),
-            colors: [
-                '#FF6347',
-                '#4682B4',
-                '#32CD32',
-                // Add more colors if you have more vehicles
-            ],
+            series: [{
+                name: 'Charging Times',
+                data: series
+            }],
+            xaxis: {
+                categories: labels
+            },
+            colors: ['#4682B4'], // You can specify your own color here
             title: {
                 text: 'Charging Times'
             }
