@@ -25,6 +25,10 @@
                 <li class="nav-item">
           <a class="nav-link" href="pie.php">Pie Chart</a>
         </li>
+                </li>
+                <li class="nav-item">
+          <a class="nav-link" href="demo.php">demo</a>
+        </li>
       </ul>
     </div>
   </div>
