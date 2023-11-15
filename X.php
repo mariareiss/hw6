@@ -35,7 +35,7 @@
 
         const chartOptions = {
             chart: {
-                type: 'polarArea',
+                type: 'line',
                 height: 300,
             },
             series: electricVehicles.map(vehicle => vehicle.charging_time),
