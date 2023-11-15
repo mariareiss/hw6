@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Electric Vehicle Charging Times</title>
-    <!-- Include Chartist.js library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist/dist/chartist.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chartist"></script>
+    <!-- Include ApexCharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
     <h1>Electric Vehicle Charging Times</h1>
-    <div class="ct-chart ct-golden-section" id="chargingTimesChart"></div>
+    <div id="chargingTimesChart"></div>
 
     <script>
         const electricVehicles = [
@@ -34,19 +33,26 @@
             // Add more vehicle data as needed
         ];
 
-        const labels = electricVehicles.map(vehicle => vehicle.model);
-        const series = electricVehicles.map(vehicle => vehicle.charging_time);
+        const chartOptions = {
+            chart: {
+                type: 'polarArea',
+                height: 300,
+            },
+            series: electricVehicles.map(vehicle => vehicle.charging_time),
+            labels: electricVehicles.map(vehicle => vehicle.model),
+            colors: [
+                '#FF6347',
+                '#4682B4',
+                '#32CD32',
+                // Add more colors if you have more vehicles
+            ],
+            title: {
+                text: 'Charging Times'
+            }
+        };
 
-        new Chartist.Pie('#chargingTimesChart', {
-            labels: labels,
-            series: series
-        }, {
-            donut: true,
-            donutWidth: 60,
-            donutSolid: true,
-            startAngle: 270,
-            total: series.reduce((a, b) => a + b, 0)
-        });
+        const chart = new ApexCharts(document.querySelector("#chargingTimesChart"), chartOptions);
+        chart.render();
     </script>
 </body>
 </html>
