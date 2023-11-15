@@ -9,7 +9,7 @@
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 <body>
 
-<img class="nature" src="img_nature1.jpeg" width="100%">
+<img class="nature" src="img_nature1.jpeg" width="25%">
 <img class="nature" src="img_mountains.jpg" width="100%">
 <img class="nature" src="img_nature.jpg" width="100%">
 
