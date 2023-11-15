@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
-    <title>JavaScript Libraries Demo</title>
-    <!-- Include Chart.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Include Axios library -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Include Lodash library -->
-    <script src="https://cdn.jsdelivr.net/npm/lodash"></script>
-    <!-- Include jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <title>Pie Chart Colors</title>
+    <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Pie Chart Colors</h1>
-  <canvas id="Pie chart colors" width="400" height="200"></canvas>
+    <canvas id="chargingTimesChart" width="400" height="200"></canvas>
 
-<script>
-  const electricVehicles = [
+    <script>
+        const electricVehicles = [
             {
                 "model": "Tesla Model S",
                 "manufacturer": "Tesla",
@@ -42,7 +33,7 @@
             // Add more vehicle data as needed
         ];
 
-     const ctx = document.getElementById('chargingTimesChart').getContext('2d');
+        const ctx = document.getElementById('chargingTimesChart').getContext('2d');
         const chargingTimesChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -73,6 +64,7 @@
                 }
             }
         });
-</script>
+    </script>
 </body>
 </html>
+
