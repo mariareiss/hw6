@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Electric Vehicle Charging Times</title>
-    <!-- Include Google Charts library -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Include Chartist.js library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist/dist/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chartist"></script>
 </head>
 <body>
     <h1>Electric Vehicle Charging Times</h1>
-    <div id="chargingTimesChart" style="width: 400px; height: 300px;"></div>
+    <div class="ct-chart ct-golden-section" id="chargingTimesChart"></div>
 
     <script>
         const electricVehicles = [
@@ -33,26 +34,19 @@
             // Add more vehicle data as needed
         ];
 
-        google.charts.load('current', { packages: ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
+        const labels = electricVehicles.map(vehicle => vehicle.model);
+        const series = electricVehicles.map(vehicle => vehicle.charging_time);
 
-        function drawChart() {
-            const data = new google.visualization.DataTable();
-            data.addColumn('string', 'Model');
-            data.addColumn('number', 'Charging Time');
-
-            electricVehicles.forEach(vehicle => {
-                data.addRow([vehicle.model, vehicle.charging_time]);
-            });
-
-            const options = {
-                title: 'Charging Times',
-                pieHole: 0.4,
-            };
-
-            const chart = new google.visualization.PieChart(document.getElementById('chargingTimesChart'));
-            chart.draw(data, options);
-        }
+        new Chartist.Pie('#chargingTimesChart', {
+            labels: labels,
+            series: series
+        }, {
+            donut: true,
+            donutWidth: 60,
+            donutSolid: true,
+            startAngle: 270,
+            total: series.reduce((a, b) => a + b, 0)
+        });
     </script>
 </body>
 </html>
